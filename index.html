@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Your Title — Your Subtitle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --fg: #e7e9ee;
+      --muted: #b3b8c3;
+      --accent: #4ea1ff;
+    }
+
+    /* Reset-ish */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, #111827 0%, transparent 60%),
+                  radial-gradient(900px 700px at -10% 100%, #0f172a 0%, transparent 55%),
+                  var(--bg);
+      color: var(--fg);
+      line-height: 1.5;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .wrap {
+      max-width: 880px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 600ms ease-out both;
+    }
+
+    h1 {
+      margin: 0 0 .4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      text-shadow: 0 0 20px rgba(78,161,255,0.18);
+    }
+
+    p.subtitle {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    /* Optional subtle underline accent for the title */
+    .accent {
+      display: inline-block;
+      position: relative;
+    }
+    .accent::after {
+      content: "";
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      bottom: -0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      filter: drop-shadow(0 0 6px rgba(78,161,255,.35));
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Respect users who prefer less motion */
+    @media (prefers-reduced-motion: reduce) {
+      .wrap { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <!-- Change the text below -->
+    <h1 class="accent">CampConnect</h1>
+    <p class="subtitle">Find Camping Friends & Events</p>
+  </main>
+</body>
+</html>
